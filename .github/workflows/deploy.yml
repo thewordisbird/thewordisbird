@@ -16,8 +16,8 @@ jobs:
     - run: yarn
     - run: yarn run build
     - run: mkdir ~/.ssh
-    - run: echo ${{ secrets.SSH_PRIVATE_KEY }} > ~/.ssh/deploy
-    - run: echo ${{ secrets.SSH_PUBLIC_KEY }} > ~/.ssh/deploy.pub
+    - run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy
+    - run: echo "${{ secrets.SSH_PUBLIC_KEY }}" > ~/.ssh/deploy.pub
     - run: rsync -re "ssh -vi ~/.ssh/deploy" $GITHUB_WORKSPACE/dist/ actions@$DROPLET_IP:/var/www/html
   
   

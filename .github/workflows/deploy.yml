@@ -1,0 +1,26 @@
+name: deploy-to-digitalocean
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-astro-project:
+    runs-on: ubuntu-latest
+  
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+    - run: yarn
+    - run: yarn run build
+    - run: mkdir ~/.ssh
+    - run: echo ${{ secrets.SSH_PRIVATE_KEY }} > ~/.ssh/deploy
+    - run: echo ${{ secrets.SSH_PUBLIC_KEY }} > ~/.ssh/deploy.pub
+    - run: rsync -re "ssh -vi ~/.ssh/deploy" $GITHUB_WORKSPACE/dist/ actions@$DROPLET_IP:/var/www/html
+  
+  
+
+  
+  

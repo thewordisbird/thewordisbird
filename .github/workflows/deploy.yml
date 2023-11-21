@@ -18,6 +18,8 @@ jobs:
     - run: mkdir ~/.ssh
     - run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy
     - run: echo "${{ secrets.SSH_PUBLIC_KEY }}" > ~/.ssh/deploy.pub
+    - run: echo "$GITHUB_WORKSPACE"
+    - run: echo "$DROPLET_IP"
     - run: rsync -re "ssh -vi ~/.ssh/deploy" $GITHUB_WORKSPACE/dist/ deploy@$DROPLET_IP:/var/www/html
   
   

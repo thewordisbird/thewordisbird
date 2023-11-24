@@ -1,0 +1,45 @@
+---
+---
+<style>
+	header {
+		position: relative;
+		display: flex;
+		height:3em ;
+		justify-content: center;
+		border-bottom: 1px solid #000;
+
+		& .logo {
+			position: absolute;
+			top: .125em;
+			left: 16px;
+			color: #000;
+			text-decoration: none;
+			font-size: 2em;
+		}
+
+		& nav {
+			font-size: 1.5em;
+			display: flex;
+			gap: 16px;
+
+			& .nav__item {
+				margin: auto;
+				color: #000;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+
+			}
+		}
+
+	}
+</style>
+<header>
+	<a class="logo" href="/">Justin Bird</a>
+	<nav>
+		<a class="nav__item" href="/about">About</a>
+		<a class="nav__item" href="/blog">Blog</a>
+	</nav>
+</header>

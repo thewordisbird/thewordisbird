@@ -7,12 +7,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: fit-content;
     border-bottom: 1px solid #000;
 
     & .info {
       display: flex;
       justify-content: space-between;
-      margin: 1em 32px 0 32px;
       height: 2em;
 
       & .info__name {
@@ -29,15 +29,29 @@
       }
     }
 
-    & .title {
+    & h1 {
+      margin: 0 auto;
       font-family: monospace;
-      font-size: 5em;
-      margin: auto;
+      line-height: 1;
+      font-size: 3.75em;
+      text-shadow: 1px 1px 0 #708090;
 
-      & h1 {
-        margin: 0;
-        line-height: 1;
-        text-shadow: 8px 4px 0 #708090;
+      /* Small devices such as large phones (640px and up) */
+      @media only screen and (min-width: 40em) {
+        font-size: 6em;
+        text-shadow: 2px 2px 0 #708090;
+      }
+
+      /* Medium devices such as tablets (768px and up) */
+      @media only screen and (min-width: 48em) {
+        font-size: 7.25em;
+        text-shadow: 3px 3px 0 #708090;
+      }
+
+      /* Large devices such as laptops (1024px and up) */
+      @media only screen and (min-width: 64em) {
+        font-size: 9.75em;
+        text-shadow: 4px 4px 0 #708090;
       }
     }
     & nav {
@@ -76,9 +90,7 @@
       >
     </div>
   </div>
-  <div class="title">
-    <h1>THEWORDISBIRD</h1>
-  </div>
+  <h1>THEWORDISBIRD</h1>
   <nav>
     <a class="nav__item" href="/">Home</a>
     <a class="nav__item" href="/portfolio">Portfolio</a>

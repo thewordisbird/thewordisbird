@@ -5,12 +5,27 @@ html
   background: #fff;
   /* Avoids horizontal shift when scrollbar is needed; */
   width: 100vw;
+  padding: 16px;
 }
 
 body {
-  max-width: 1080px;
-  height: 100vh;
+  max-width: 40em;
   margin: auto;
+
+  /* Medium devices such as tablets (768px and up) */
+  @media only screen and (min-width: 40em) {
+    max-width: 40em;
+  }
+
+  /* Medium devices such as tablets (768px and up) */
+  @media only screen and (min-width: 48em) {
+    max-width: 48em;
+  }
+  
+  /* Large devices such as laptops (1024px and up) */
+  @media only screen and (min-width: 64em) {
+    max-width: 64em;
+  }
 }
 
 

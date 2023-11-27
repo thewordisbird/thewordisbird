@@ -4,25 +4,47 @@
 
 <style>
   header {
-    position: relative;
     display: flex;
-    height: 3em;
+    flex-direction: column;
     justify-content: center;
     border-bottom: 1px solid #000;
 
-    & .logo {
-      position: absolute;
-      top: 0.125em;
-      left: 16px;
-      color: #000;
-      text-decoration: none;
-      font-size: 2em;
+    & .info {
+      display: flex;
+      justify-content: space-between;
+      margin: 1em 32px 0 32px;
+      height: 2em;
+
+      & .info__name {
+        font-size: 1em;
+        line-height: 1;
+      }
+
+      & .info__socials {
+        font-size: 2em;
+
+        & a {
+          color: black;
+        }
+      }
     }
 
+    & .title {
+      font-family: monospace;
+      font-size: 5em;
+      margin: auto;
+
+      & h1 {
+        margin: 0;
+        line-height: 1;
+        text-shadow: 8px 4px 0 #708090;
+      }
+    }
     & nav {
       font-size: 1.5em;
       display: flex;
       gap: 16px;
+      margin-bottom: 0.5em;
 
       & .nav__item {
         margin: auto;
@@ -37,9 +59,29 @@
   }
 </style>
 <header>
-  <a class="logo" href="/">Justin Bird</a>
+  <div class="info">
+    <div class="info__name">
+      Justin Bird<br />Los Angeles, CA
+    </div>
+    <div class="info__socials">
+      <a
+        href="https://github.com/thewordisbird"
+        rel="noopener noreferrer"
+        target="_blank"><i class="fa-brands fa-square-github"></i></a
+      >
+      <a
+        href="https://www.linkedin.com/in/thewordisbird/"
+        rel="noopener noreferrer"
+        target="_blank"><i class="fa-brands fa-linkedin"></i></a
+      >
+    </div>
+  </div>
+  <div class="title">
+    <h1>THEWORDISBIRD</h1>
+  </div>
   <nav>
-    <a class="nav__item" href="/about">About</a>
+    <a class="nav__item" href="/">Home</a>
+    <a class="nav__item" href="/portfolio">Portfolio</a>
     <a class="nav__item" href="/blog">Blog</a>
   </nav>
 </header>

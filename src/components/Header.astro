@@ -30,9 +30,19 @@
         justify-content: space-between;
         height: 2em;
 
-        & .info__name {
+        & .info__text {
+          height: 100%;
           font-size: 1em;
-          line-height: 1;
+          border: 1px solid black;
+          border-radius: 4px;;
+          display: flex;
+          justify-content: center ;
+          align-items: center;
+          color: #fff;
+          padding-left: 0.25em;
+          padding-right: 0.25em;
+          background: #000;
+
         }
 
         & .info__socials {
@@ -171,7 +181,7 @@
               margin: 0 auto;
               text-align: center;;
               color: #fff;
-              padding-left: ;
+            padding: 0.25em;
             background: #000;
             border-radius: 4px;
 
@@ -189,11 +199,15 @@
 </style>
 <header>
   <div class="info">
-    <div class="info__name">
-      Justin Bird
+    <div class="info__text">
+      <p>
+        Justin Bird
+      </p>
     </div>
-    <div class="info__name">
-     Los Angeles, Ca 
+    <div class="info__text">
+     <p>
+      Los Angeles, Ca 
+    </p>
     </div>
     <div class="info__socials">
       <a

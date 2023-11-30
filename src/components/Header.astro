@@ -4,70 +4,185 @@
 
 <style>
   header {
+
+    width: var(--max-width-content);
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    width: fit-content;
-    border-bottom: 1px solid #000;
+    padding: 1em 0;
+    border-bottom: 4px solid #000;
 
+    @media only screen and (min-width: 40em) {
+      flex-direction: column;
+    }
+
+    /* Info Block */
     & .info {
-      display: flex;
-      justify-content: space-between;
-      height: 2em;
+      /* 
+        For mobile this information will not be displayed
+        TODO: Determine where to display this content
+              - Maybe this can go below the title between 2 hr's
+      */
+      display: none;
 
-      & .info__name {
-        font-size: 1em;
-        line-height: 1;
-      }
+      /* For all non-mobile viewports */
+      @media only screen and (min-width: 40em) {
+        display: flex;
+        justify-content: space-between;
+        height: 2em;
 
-      & .info__socials {
-        font-size: 2em;
+        & .info__name {
+          font-size: 1em;
+          line-height: 1;
+        }
 
-        & a {
-          color: black;
+        & .info__socials {
+          font-size: 2em;
+
+          & a {
+            color: black;
+          }
         }
       }
     }
 
-    & h1 {
-      margin: 0 auto;
-      font-family: monospace;
-      line-height: 1;
-      font-size: 3.75em;
-      text-shadow: 1px 1px 0 #708090;
+    /* Title Block */
+    & .title {
+      --text-shadow-y-offset: 0px;
+      --text-shadow-x-offset: 0px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0 1em;
 
-      /* Small devices such as large phones (640px and up) */
-      @media only screen and (min-width: 40em) {
-        font-size: 6em;
-        text-shadow: 2px 2px 0 #708090;
+      & h1 {
+        font-family: "Arial Narrow", Arial, Helvettica, sans-serif;
+        font-size: 2em;
+        margin: 0;
+        /*text-shadow: var(--text-shadow-y-offset) var(--text-shadow-x-offset) var(text-shadow-blur) var(--theme-secondary-color);*/
+        text-shadow: var(--text-shadow-x-offset) var(--text-shadow-y-offset) 0 var(--theme-secondary-color);
       }
 
       /* Medium devices such as tablets (768px and up) */
-      @media only screen and (min-width: 48em) {
-        font-size: 7.25em;
-        text-shadow: 3px 3px 0 #708090;
-      }
+      @media only screen and (min-width: 40em) {
+      --text-shadow-y-offset: 2px;
+      --text-shadow-x-offset: 2px;
 
+        margin: auto;
+        text-align: center;
+      & h1 {
+        font-size: 5.65em;
+      }
+      }
+      
+      /* Medium devices such as tablets (768px and up) */
+      @media only screen and (min-width: 48em) {
+        --text-shadow-y-offset: 3px;
+        --text-shadow-x-offset: 3px;
+
+        & h1 {
+          font-size: 6.8em;
+        }
+      }
+      
       /* Large devices such as laptops (1024px and up) */
       @media only screen and (min-width: 64em) {
-        font-size: 9.75em;
-        text-shadow: 4px 4px 0 #708090;
+        --text-shadow-y-offset: 4px;
+        --text-shadow-x-offset: 4px;
+
+        & h1 {
+          font-size: 9.125em;
+        }
+      }
+
+    }
+
+    /* Mobile Navigation Block */
+    #mobile-nav-toggle {
+      background: none;
+      border: none;
+      padding: 0;
+      margin-left: 1em;
+      width: 2em;
+
+      & >  hr {
+        height: 0.35em;
+        background: #000;
+        margin: 0.25em 0;
+        border: none;
+      }
+
+      @media only screen and (min-width: 40em) {
+        display: none;
       }
     }
-    & nav {
-      font-size: 1.5em;
-      display: flex;
-      gap: 16px;
-      margin-bottom: 0.5em;
 
-      & .nav__item {
-        margin: auto;
-        color: #000;
-        text-decoration: none;
+    :popover-open {
+      position: absolute;
+      inset: unset;
+      top:4.35em;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
 
-        &:hover {
-          text-decoration: underline;
+    #mobile-nav{
+     padding: 0; 
+      & > ul {
+        all: unset;
+        list-style-type: none;
+        & > li {
+          padding: 0 1em;
+          & > .nav__item { 
+            font-size: 2em;
+            display: block;
+            color: black;
+            text-decoration: none;
+
+            &:hover {
+              background: var(--theme-secondary-color);;
+            }
+      
+          }
         }
+      }
+    }
+
+
+    #main-nav {
+      display: none;
+
+      @media screen and (min-width: 40em) {
+        font-size: 1.5em;
+        display: block;
+        
+
+        & > ul {
+        margin: 0;
+          display: flex;
+          justify-content: space-around;
+
+          & li {
+            all: unset;
+            width: 5em;
+
+            & .nav__item {
+              display: block;;
+              text-decoration: none;
+              margin: 0 auto;
+              text-align: center;;
+              color: #fff;
+              padding-left: ;
+            background: #000;
+            border-radius: 4px;
+
+              &:hover {
+
+                text-decoration: underline;
+              }
+            }
+
+        }
+
       }
     }
   }
@@ -75,7 +190,10 @@
 <header>
   <div class="info">
     <div class="info__name">
-      Justin Bird<br />Los Angeles, CA
+      Justin Bird
+    </div>
+    <div class="info__name">
+     Los Angeles, Ca 
     </div>
     <div class="info__socials">
       <a
@@ -90,10 +208,25 @@
       >
     </div>
   </div>
-  <h1>THEWORDISBIRD</h1>
-  <nav>
-    <a class="nav__item" href="/">Home</a>
-    <a class="nav__item" href="/portfolio">Portfolio</a>
-    <a class="nav__item" href="/blog">Blog</a>
+  <div class="title">
+    <h1>THEWORDISBIRD</h1>
+    <button popovertarget="mobile-nav" id="mobile-nav-toggle" type="button">
+      <hr id="top-bun" />
+      <hr id="patty" />
+      <hr id="bottom-bun" />
+    </button>
+  <nav popover id="mobile-nav">
+    <ul>
+      <li><a class="nav__item" href="/">Home</a></li>
+      <li><a class="nav__item" href="/portfolio">Portfolio</a></li>
+      <li><a class="nav__item" href="/blog">Blog</a></li>
+    </ul>
+  </div>
+  <nav id="main-nav">
+    <ul>
+      <li><a class="nav__item" href="/">Home</a></li>
+      <li><a class="nav__item" href="/portfolio">Portfolio</a></li>
+      <li><a class="nav__item" href="/blog">Blog</a></li>
+    </ul>
   </nav>
 </header>

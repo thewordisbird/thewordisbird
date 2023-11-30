@@ -1,31 +1,50 @@
+:root {
+  /* Breakpoints */
+  --breakpoint-mobile: 40em;
+  --max-width-content: 100vw;
+
+  /* Colors */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-slate: #708090;
+  --color-hot-pink: #FF69B4;
+
+  /* Themeing */
+  --theme-background-color: var(--color-white);
+  --theme-primary-color: var(--color-black);
+  --theme-secondary-color: var(--color-slate);
+  --theme-accent-color: var(--color-hot-pink);
+}
+
 html
 {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  background: #fff;
+  background: var(--theme-background-color);
   /* Avoids horizontal shift when scrollbar is needed; */
   width: 100vw;
-  padding: 16px;
 }
 
 body {
-  max-width: 40em;
+  width: var(--max-width-content);
+  background: var(--theme-background-color);
   margin: auto;
 
   /* Medium devices such as tablets (768px and up) */
   @media only screen and (min-width: 40em) {
-    max-width: 40em;
+    --max-width-content: 40em;
   }
-
+  
   /* Medium devices such as tablets (768px and up) */
   @media only screen and (min-width: 48em) {
-    max-width: 48em;
+    --max-width-content: 48em;
   }
   
   /* Large devices such as laptops (1024px and up) */
   @media only screen and (min-width: 64em) {
-    max-width: 64em;
+    --max-width-content: 64em;
   }
+
 }
 
 

@@ -66,7 +66,7 @@
     }
   }
 
-  #mobile-nav-trigger {
+  #mobile-nav-toggle {
     width: 2em;
     height: 2px;
     background: var(--color-black);
@@ -97,8 +97,8 @@
     }
   }
 
-  #mobile-nav-trigger:focus,
-  #mobile-nav-trigger:focus-within {
+  #mobile-nav-toggle:focus,
+  #mobile-nav-toggle:focus-within {
     background: transparent;
 
     &::before {
@@ -111,13 +111,13 @@
     }
   }
 
-  #mobile-nav-trigger:focus ~ nav,
-  #mobile-nav-trigger:focus-within ~ nav {
+  #mobile-nav-toggle:focus ~ nav,
+  #mobile-nav-toggle:focus-within ~ nav {
     max-height: 100%;
   }
 
 </style>
-<button type="button" id="mobile-nav-trigger"></button>
+<button type="button" id="mobile-nav-toggle"></button>
 <nav class="main-nav">
   <ul class="menu">
     <li><a class="nav__item" href="/">Home</a></li>
@@ -126,7 +126,7 @@
   </ul>
 </nav>
 <script>
-  const navToggle = document.getElementById("mobile-nav-trigger");
+  const navToggle = document.getElementById("mobile-nav-toggle");
 
   let state = false;
   navToggle!.addEventListener("click", function toggleNav() {

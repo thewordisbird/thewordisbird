@@ -1,254 +1,158 @@
 ---
+import HeaderInfo from "./HeaderInfo.astro";
+import HeaderTitle from "./HeaderTitle.astro";
 
+/*
+  Responsive Mobile Nav:
+
+  - html only should display the menu at the upper half of the page so the site is navigateable
+  - html & css, clicking the button should open and close the menu. clicking outside the menue
+    will not work
+  - html, css & js: full functionality 
+
+*/
 ---
 
 <style>
   header {
-
-    width: var(--max-width-content);
+    position: sticky;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     padding: 1em 0;
     border-bottom: 4px solid #000;
 
     @media only screen and (min-width: 40em) {
       flex-direction: column;
     }
+  }
 
-    /* Info Block */
-    & .info {
-      /* 
-        For mobile this information will not be displayed
-        TODO: Determine where to display this content
-              - Maybe this can go below the title between 2 hr's
-      */
-      display: none;
+  .main-nav {
+    width: 100%;
+    position: fixed;
+    top: 4.5em;
+    background: var(--color-black);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.25s ease-out;
 
-      /* For all non-mobile viewports */
-      @media only screen and (min-width: 40em) {
-        display: flex;
-        justify-content: space-between;
-        height: 2em;
+    @media screen and (min-width: 40em) {
+      position: unset;
+      max-height: 100%;
+      background: var(--color-white);
+      display: block;
+    }
+  }
 
-        & .info__text {
-          height: 100%;
-          font-size: 1em;
-          border: 1px solid black;
-          border-radius: 4px;;
-          display: flex;
-          justify-content: center ;
-          align-items: center;
-          color: #fff;
-          padding-left: 0.25em;
-          padding-right: 0.25em;
-          background: #000;
-
-        }
-
-        & .info__socials {
-          font-size: 2em;
-
-          & a {
-            color: black;
-          }
-        }
-      }
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    & li {
+      border-bottom: 1px solid var(--color-slate);
     }
 
-    /* Title Block */
-    & .title {
-      --text-shadow-y-offset: 0px;
-      --text-shadow-x-offset: 0px;
+    @media screen and (min-width: 40em) {
       display: flex;
-      justify-content: space-between;
-      width: 100%;
-      margin: 0 1em;
-
-      & h1 {
-        font-family: "Arial Narrow", Arial, Helvettica, sans-serif;
-        font-size: 2em;
-        margin: 0;
-        /*text-shadow: var(--text-shadow-y-offset) var(--text-shadow-x-offset) var(text-shadow-blur) var(--theme-secondary-color);*/
-        text-shadow: var(--text-shadow-x-offset) var(--text-shadow-y-offset) 0 var(--theme-secondary-color);
-      }
-
-      /* Medium devices such as tablets (768px and up) */
-      @media only screen and (min-width: 40em) {
-      --text-shadow-y-offset: 2px;
-      --text-shadow-x-offset: 2px;
-
-        margin: auto;
-        text-align: center;
-      & h1 {
-        font-size: 5.65em;
-      }
-      }
-      
-      /* Medium devices such as tablets (768px and up) */
-      @media only screen and (min-width: 48em) {
-        --text-shadow-y-offset: 3px;
-        --text-shadow-x-offset: 3px;
-
-        & h1 {
-          font-size: 6.8em;
-        }
-      }
-      
-      /* Large devices such as laptops (1024px and up) */
-      @media only screen and (min-width: 64em) {
-        --text-shadow-y-offset: 4px;
-        --text-shadow-x-offset: 4px;
-
-        & h1 {
-          font-size: 9.125em;
-        }
-      }
-
+      justify-content: space-around;
     }
+  }
 
-    /* Mobile Navigation Block */
-    #mobile-nav-toggle {
-      background: none;
-      border: none;
-      padding: 0;
-      margin-left: 1em;
-      width: 2em;
+  .nav__item {
+    display: block;
+    color: var(--color-white);
+    margin: 16px;
+    text-decoration: none;
 
-      & >  hr {
-        height: 0.35em;
-        background: #000;
-        margin: 0.25em 0;
-        border: none;
-      }
-
-      @media only screen and (min-width: 40em) {
-        display: none;
-      }
+    &:hover {
+      background: var(--color-slate);
     }
+    @media screen and (min-width: 40em) {
+      width: 5em;
+      display: block;
+      text-decoration: none;
+      margin: 0 auto;
+      text-align: center;
+      color: #fff;
+      padding: 0.25em;
+      background: #000;
+      border-radius: 4px;
 
-    [popover] {
-    &:popover-open {
-      @starting-style {
-        opacity: 0;
-      }
-
-      opacity: 1;
-      position: absolute;
-      inset: unset;
-      top:4.6em;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    opacity: 0;
-    transition: opacity 1s, dispaly 1s;
-    }
-
-
-    #mobile-nav{
-     padding: 0; 
-      & > ul {
-        all: unset;
-        list-style-type: none;
-        & > li {
-          padding: 0 1em;
-          & > .nav__item { 
-            font-size: 2em;
-            display: block;
-            color: black;
-            text-decoration: none;
-
-            &:hover {
-              background: var(--theme-secondary-color);;
-            }
-      
-          }
-        }
-      }
-    }
-
-
-    #main-nav {
-      display: none;
-
-      @media screen and (min-width: 40em) {
-        font-size: 1.5em;
-        display: block;
-        
-
-        & > ul {
-        margin: 0;
-          display: flex;
-          justify-content: space-around;
-
-          & li {
-            all: unset;
-            width: 5em;
-
-            & .nav__item {
-              display: block;;
-              text-decoration: none;
-              margin: 0 auto;
-              text-align: center;;
-              color: #fff;
-            padding: 0.25em;
-            background: #000;
-            border-radius: 4px;
-
-              &:hover {
-
-                text-decoration: underline;
-              }
-            }
-
-        }
-
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
+
+  #mobile-nav-trigger {
+    width: 2em;
+    height: 2px;
+    background: var(--color-black);
+    border: none;
+    align-self: center;
+    position: relative;
+    padding: 0;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: inherit;
+      height: 2px;
+      background: var(--color-black);
+      position: absolute;
+      top: 0.5em;
+      transition: all 0.2s ease-out;
+    }
+
+    &::after {
+      top: -0.5em;
+    }
+
+    @media screen and (min-width: 40em) {
+      display: none;
+    }
+  }
+
+  #mobile-nav-trigger:focus,
+  #mobile-nav-trigger:focus-within {
+    background: transparent;
+
+    &::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+    &::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+  }
+
+  #mobile-nav-trigger:focus ~ nav,
+  #mobile-nav-trigger:focus-within ~ nav {
+    max-height: 100%;
+  }
 </style>
+<script>
+  const navToggle = document.getElementById("mobile-nav-trigger");
+
+  let state = false;
+  navToggle!.addEventListener("click", function toggleNav() {
+    if (state) {
+      navToggle?.blur();
+      state = false;
+    } else {
+      state = true;
+    }
+  });
+</script>
 <header>
-  <div class="info">
-    <div class="info__text">
-      <p>
-        Justin Bird
-      </p>
-    </div>
-    <div class="info__text">
-     <p>
-      Los Angeles, Ca 
-    </p>
-    </div>
-    <div class="info__socials">
-      <a
-        href="https://github.com/thewordisbird"
-        rel="noopener noreferrer"
-        target="_blank"><i class="fa-brands fa-square-github"></i></a
-      >
-      <a
-        href="https://www.linkedin.com/in/thewordisbird/"
-        rel="noopener noreferrer"
-        target="_blank"><i class="fa-brands fa-linkedin"></i></a
-      >
-    </div>
-  </div>
-  <div class="title">
-    <h1>THEWORDISBIRD</h1>
-    <button popovertarget="mobile-nav" id="mobile-nav-toggle" type="button">
-      <hr id="top-bun" />
-      <hr id="patty" />
-      <hr id="bottom-bun" />
-    </button>
-  <nav popover id="mobile-nav">
-    <ul>
-      <li><a class="nav__item" href="/">Home</a></li>
-      <li><a class="nav__item" href="/portfolio">Portfolio</a></li>
-      <li><a class="nav__item" href="/blog">Blog</a></li>
-    </ul>
-  </div>
-  <nav id="main-nav">
-    <ul>
+  <HeaderInfo />
+  <HeaderTitle />
+  <button type="button" id="mobile-nav-trigger"></button>
+  <nav class="main-nav">
+    <ul class="menu">
       <li><a class="nav__item" href="/">Home</a></li>
       <li><a class="nav__item" href="/portfolio">Portfolio</a></li>
       <li><a class="nav__item" href="/blog">Blog</a></li>

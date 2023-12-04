@@ -6,7 +6,7 @@
     width: 100%;
     position: fixed;
     top: 4.5em;
-    background: var(--color-black);
+    background: var(--theme-background-color);
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.25s ease-out;
@@ -14,7 +14,7 @@
     @media screen and (min-width: 40em) {
       position: unset;
       max-height: 100%;
-      background: var(--color-white);
+      background: var(--theme-background-color);
       display: block;
     }
   }
@@ -24,8 +24,9 @@
     margin: 0;
     padding: 0;
     font-size: 1.5rem;
+
     & li {
-      border-bottom: 1px solid var(--color-slate);
+      border-bottom: 1px solid var(--theme-secondary-border-color);
     }
 
     @media screen and (min-width: 40em) {
@@ -36,12 +37,13 @@
 
   .nav__item {
     display: block;
-    color: var(--color-white);
+    color: var(--theme-font-color);
     margin: 16px;
     text-decoration: none;
 
-    &:hover {
-      background: var(--color-slate);
+    &:hover::after {
+      content: ':)';
+      float: right;
     }
     @media screen and (min-width: 40em) {
       width: 5em;
@@ -49,13 +51,17 @@
       text-decoration: none;
       margin: 0 auto;
       text-align: center;
-      color: #fff;
+      color: var(--theme-font-color-inverse);
       padding: 0.25em;
-      background: #000;
+      background: var(--theme-background-color-inverse);
       border-radius: 4px;
 
       &:hover {
         text-decoration: underline;
+      }
+
+      &:hover::after {
+        all: unset;
       }
     }
   }

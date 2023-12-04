@@ -10,26 +10,13 @@ import MainNav from "./MainNav.astro";
     display: flex;
     justify-content: space-around;
     padding: 1em 0;
-    border-bottom: 4px solid #000;
+    border-bottom: 4px solid var(--theme-primary-border-color);
 
     @media only screen and (min-width: 40em) {
       flex-direction: column;
     }
   }
 </style>
-<script>
-  const navToggle = document.getElementById("mobile-nav-trigger");
-
-  let state = false;
-  navToggle!.addEventListener("click", function toggleNav() {
-    if (state) {
-      navToggle?.blur();
-      state = false;
-    } else {
-      state = true;
-    }
-  });
-</script>
 <header>
   <HeaderInfo />
   <HeaderTitle />

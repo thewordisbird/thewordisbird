@@ -11,9 +11,14 @@
 
   /* Themeing */
   --theme-background-color: var(--color-white);
+  --theme-background-color-inverse: var(--color-black);
+  --theme-font-color: var(--color-black);
+  --theme-font-color-inverse: var(--color-white);
   --theme-primary-color: var(--color-black);
   --theme-secondary-color: var(--color-slate);
   --theme-accent-color: var(--color-hot-pink);
+  --theme-primary-border-color: var(--color-black);
+  --theme-secondary-border-color: var(--color-slate);
 }
 
 html

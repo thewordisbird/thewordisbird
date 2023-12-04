@@ -1,0 +1,56 @@
+---
+
+---
+
+<style>
+  /* Title Block */
+  .title {
+    --text-shadow-y-offset: 0px;
+    --text-shadow-x-offset: 0px;
+    display: flex;
+    margin: 0;
+
+    & h1 {
+      font-family: "Arial Narrow", Arial, Helvettica, sans-serif;
+      font-size: 2em;
+      margin: 0;
+      text-shadow: var(--text-shadow-x-offset) var(--text-shadow-y-offset) 0
+        var(--theme-secondary-color);
+    }
+
+    /* Medium devices such as tablets (768px and up) */
+    @media only screen and (min-width: 40em) {
+      --text-shadow-y-offset: 2px;
+      --text-shadow-x-offset: 2px;
+
+      margin: auto;
+      text-align: center;
+      & h1 {
+        font-size: 5.65em;
+      }
+    }
+
+    /* Medium devices such as tablets (768px and up) */
+    @media only screen and (min-width: 48em) {
+      --text-shadow-y-offset: 3px;
+      --text-shadow-x-offset: 3px;
+
+      & h1 {
+        font-size: 6.8em;
+      }
+    }
+
+    /* Large devices such as laptops (1024px and up) */
+    @media only screen and (min-width: 64em) {
+      --text-shadow-y-offset: 4px;
+      --text-shadow-x-offset: 4px;
+
+      & h1 {
+        font-size: 9.125em;
+      }
+    }
+  }
+</style>
+<div class="title">
+  <h1>THEWORDISBIRD</h1>
+</div>

@@ -1,0 +1,56 @@
+---
+
+---
+
+<style>
+  /* Info Block */
+  .info {
+    /* 
+        For mobile this information will not be displayed
+        TODO: Determine where to display this content
+              - Maybe this can go below the title between 2 hr's
+      */
+    display: none;
+
+    @media only screen and (min-width: 40em) {
+      display: flex;
+      justify-content: space-between;
+      height: 2em;
+    }
+  }
+
+  .info__text {
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .info__socials {
+    font-size: 2em;
+
+    & a {
+      color: var(--theme-primary-color);
+    }
+  }
+</style>
+<div class="info">
+  <div class="info__text">
+    <p>Justin Bird</p>
+  </div>
+  <div class="info__text">
+    <p>Los Angeles, Ca</p>
+  </div>
+  <div class="info__socials">
+    <a
+      href="https://github.com/thewordisbird"
+      rel="noopener noreferrer"
+      target="_blank"><i class="fa-brands fa-square-github"></i></a
+    >
+    <a
+      href="https://www.linkedin.com/in/thewordisbird/"
+      rel="noopener noreferrer"
+      target="_blank"><i class="fa-brands fa-linkedin"></i></a
+    >
+  </div>
+</div>

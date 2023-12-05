@@ -8,12 +8,14 @@ import MainNav from "./MainNav.astro";
   header {
     position: sticky;
     display: flex;
-    justify-content: space-around;
-    padding: 1em 0;
+    justify-content: space-between;
+    padding: 1em 1em;
     border-bottom: 4px solid var(--theme-primary-border-color);
 
-    @media only screen and (min-width: 40em) {
+    @media only screen and (min-width: 48rem) {
       flex-direction: column;
+      width: fit-content;
+      margin: auto;
     }
   }
 </style>

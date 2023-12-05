@@ -31,25 +31,13 @@ html
 }
 
 body {
-  width: var(--max-width-content);
+  width: 100vw;
   background: var(--theme-background-color);
   margin: auto;
 
-  /* Medium devices such as tablets (768px and up) */
-  @media only screen and (min-width: 40em) {
-    --max-width-content: 40em;
+  @media only screen and (min-width: 48rem) {
+    width: fit-content;
   }
-  
-  /* Medium devices such as tablets (768px and up) */
-  @media only screen and (min-width: 48em) {
-    --max-width-content: 48em;
-  }
-  
-  /* Large devices such as laptops (1024px and up) */
-  @media only screen and (min-width: 64em) {
-    --max-width-content: 64em;
-  }
-
 }
 
 

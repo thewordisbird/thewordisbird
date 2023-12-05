@@ -1,6 +1,7 @@
 ---
 
 ---
+
 <style>
   .main-nav {
     width: 100%;
@@ -11,7 +12,7 @@
     max-height: 0;
     transition: max-height 0.25s ease-out;
 
-    @media screen and (min-width: 40em) {
+    @media screen and (min-width: 48rem) {
       position: unset;
       max-height: 100%;
       background: var(--theme-background-color);
@@ -23,13 +24,13 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    font-size: 1.5rem;
+    font-size: 1.5em;
 
     & li {
       border-bottom: 1px solid var(--theme-secondary-border-color);
     }
 
-    @media screen and (min-width: 40em) {
+    @media screen and (min-width: 48rem) {
       display: flex;
       justify-content: space-around;
     }
@@ -42,10 +43,10 @@
     text-decoration: none;
 
     &:hover::after {
-      content: ':)';
+      content: ":)";
       float: right;
     }
-    @media screen and (min-width: 40em) {
+    @media screen and (min-width: 48rem) {
       width: 5em;
       display: block;
       text-decoration: none;
@@ -92,7 +93,7 @@
       top: -0.5em;
     }
 
-    @media screen and (min-width: 40em) {
+    @media screen and (min-width: 48rem) {
       display: none;
     }
   }
@@ -115,7 +116,6 @@
   #mobile-nav-toggle:focus-within ~ nav {
     max-height: 100%;
   }
-
 </style>
 <button type="button" id="mobile-nav-toggle"></button>
 <nav class="main-nav">

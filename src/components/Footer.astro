@@ -1,0 +1,98 @@
+---
+
+---
+
+<style>
+  footer {
+    border-top: 4px solid var(--theme-primary-border-color);
+    display: flex;
+    flex-direction: column;
+    padding-left: 1em;
+
+    & h4 {
+      text-transform: uppercase;
+      margin-top: 16px;
+      margin-bottom: 0;
+    }
+
+    & ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    & li {
+      margin: 0.25em;
+      color: var(--color-slate);
+    }
+
+    & a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 400;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    @media only screen and (min-width: 48rem) {
+      flex-direction: row;
+      .footer__content {
+        flex-basis: 33.33%;
+      }
+    }
+  }
+</style>
+<footer>
+  <div class="footer__content">
+    <h4>Justin Bird</h4>
+    <ul>
+      <li>
+        <a href="mailto: justin.h.bird@gmail.com">
+          <i class="fa-solid fa-envelope"></i>
+           justin.h.bird@gmail.com
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.github.com/thewordisbird"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <i class="fa-brands fa-square-github"></i>
+           @thewordisbird
+        </a>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/thewordisbird"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+             @thewordisbird
+          </a>
+        </li>
+      </li>
+    </ul>
+  </div>
+  <div class="footer__content">
+    <h4>Site Map</h4>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li>
+          <a href="/portfolio">Portfolio</a>
+        </li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="footer__content">
+    <h4>Settings</h4>
+    <ul>
+      <li><i class="fa-solid fa-sun"></i> Light Theme</li>
+      <li><i class="fa-solid fa-moon"></i> Dark Theme (coming soon!)</li>
+      <ul></ul>
+    </ul>
+  </div>
+</footer>

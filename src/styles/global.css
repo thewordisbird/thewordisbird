@@ -31,13 +31,36 @@ html
 }
 
 body {
-  width: 100vw;
+  width: var(--max-width-content);
   background: var(--theme-background-color);
   margin: auto;
 
   @media only screen and (min-width: 48rem) {
-    width: fit-content;
+    --max-width-content: min-content;
   }
 }
+
+p {
+  font-size: 1.2em;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+
+
 
 

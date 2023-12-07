@@ -5,9 +5,9 @@
 
   /* Colors */
   --color-black: #000000;
-  --color-white: #FFFFFF;
+  --color-white: #ffffff;
   --color-slate: #708090;
-  --color-hot-pink: #FF69B4;
+  --color-hot-pink: #ff69b4;
 
   /* Themeing */
   --theme-background-color: var(--color-white);
@@ -21,8 +21,7 @@
   --theme-secondary-border-color: var(--color-slate);
 }
 
-html
-{
+html {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   background: var(--theme-background-color);
@@ -59,8 +58,3 @@ h3 {
 h4 {
   font-size: 1.2em;
 }
-
-
-
-
-

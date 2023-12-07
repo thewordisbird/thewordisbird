@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import headShot from "../assets/images/justin-bird-headshot.jpg"
+import headShot from "../assets/images/justin-bird-headshot.jpg";
 ---
 
 <style>
@@ -39,24 +39,25 @@ import headShot from "../assets/images/justin-bird-headshot.jpg"
     justify-content: center;
     align-items: center;
 
-    & img{
+    & img {
       border: 4px solid var(--color-black);
       border-radius: 50%;
     }
 
     & .intro__message {
-      & p{
+      & p {
         margin-top: 0.5em;
       }
     }
-    
   }
 
   .contact {
-flex-grow: 1;
+    flex-grow: 1;
+
     & h4 {
       margin: 0 0 0.5em 0;
-}
+    }
+
     & ul {
       list-style-type: none;
       margin: 0;
@@ -75,6 +76,7 @@ flex-grow: 1;
       &:hover {
         text-decoration: underline;
       }
+    }
   }
 
   .blog {
@@ -83,53 +85,56 @@ flex-grow: 1;
   }
 </style>
 <BaseLayout title="Justin Bird | Home">
-    <secion class="row">
-      <article class="row__item intro">
-        <Image src={headShot} alt="Justin Bird" width="200" />
-        <div class="intro__message">
-          <h2> Hello, I'm Justin...</h2>
-          <p> a web developer and general coding hobbist. Follow along as I work through interesting projects and learn new things!</p>
-        </div>
-      </article>
-      <article class="row__item contact"> 
-        <h2>Get In Touch</h2>
+  <secion class="row">
+    <article class="row__item intro">
+      <Image src={headShot} alt="Justin Bird" width="200" />
+      <div class="intro__message">
+        <h2>Hello, I'm Justin...</h2>
         <p>
-          Need something build?<br />
-          Have questions about a blog post?<br />
-          Just want to say hi?
+          a web developer and general coding hobbist. Follow along as I work
+          through interesting projects and learn new things!
         </p>
-        <h4>Justin Bird</>
-        <ul>
-          <li>
-            <a href="mailto: justin.h.bird@gmail.com">
-              <i class="fa-solid fa-envelope"></i>
-               justin.h.bird@gmail.com
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.github.com/thewordisbird"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <i class="fa-brands fa-square-github"></i>
-               @thewordisbird
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/thewordisbird"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <i class="fa-brands fa-linkedin"></i>
-               @thewordisbird
-            </a>
-          </li>
-        </ul>
-      </article>
-    </section>
-    <section>
+      </div>
+    </article>
+    <article class="row__item contact">
+      <h2>Get In Touch</h2>
+      <p>
+        Need something build?<br />
+         Have questions about a blog post?<br />
+         Just want to say hi?
+      </p>
+      <h4>Justin Bird</h4>
+      <ul>
+        <li>
+          <a href="mailto: justin.h.bird@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+             justin.h.bird@gmail.com
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.github.com/thewordisbird"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <i class="fa-brands fa-square-github"></i>
+             @thewordisbird
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/thewordisbird"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+             @thewordisbird
+          </a>
+        </li>
+      </ul>
+    </article>
+  </secion>
+  <section>
     <h2 class="section">Recent Posts</h2><a href="/blog">see all post...</a>
     <div class="row">
       <article class="row__item blog">
@@ -140,7 +145,7 @@ flex-grow: 1;
       </article>
       <div class="row__item blog">
         <h3>Placeholder Blog Post: Post 3</h3>
-      </article>
+      </div>
     </div>
-    </section>
+  </section>
 </BaseLayout>

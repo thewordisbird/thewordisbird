@@ -27,9 +27,18 @@ import headShot from "../assets/images/justin-bird-headshot.jpg";
     display: block;
   }
 
-  .section {
+  .section-header {
     display: inline-block;
     margin-right: 0.5em;
+  }
+
+  .see-more {
+    color: var(--color-slate);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .intro {
@@ -135,7 +144,9 @@ import headShot from "../assets/images/justin-bird-headshot.jpg";
     </article>
   </secion>
   <section>
-    <h2 class="section">Recent Posts</h2><a href="/blog">see all post...</a>
+    <h2 class="section-header">Recent Posts</h2><a class="see-more" href="/blog"
+      >see all post...</a
+    >
     <div class="row">
       <article class="row__item blog">
         <h3>Placeholder Blog Post: Post 1</h3>

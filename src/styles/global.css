@@ -25,8 +25,10 @@ html {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   background: var(--theme-background-color);
+  overflow-x: hidden;
   /* Avoids horizontal shift when scrollbar is needed; */
   width: 100vw;
+  
 }
 
 body {

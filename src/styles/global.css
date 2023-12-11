@@ -14,6 +14,7 @@
   --theme-background-color-inverse: var(--color-black);
   --theme-font-color: var(--color-black);
   --theme-font-color-inverse: var(--color-white);
+  --theme-secondary-font-color: var(--color-slate);
   --theme-primary-color: var(--color-black);
   --theme-secondary-color: var(--color-slate);
   --theme-accent-color: var(--color-hot-pink);

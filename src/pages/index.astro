@@ -2,12 +2,11 @@
 import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import headShot from "../assets/images/justin-bird-headshot.jpg";
+
+const blogPosts = await Astro.glob("./blog/*.md");
 ---
 
 <style>
-  .container {
-    width: 100%;
-  }
   .row {
     display: flex;
     flex-direction: column;
@@ -118,6 +117,19 @@ import headShot from "../assets/images/justin-bird-headshot.jpg";
     flex-grow: 1;
     min-height: 200px;
   }
+
+  .read_post {
+    display: block;
+    width: 5em;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5em;
+    background: var(--theme-background-color-inverse);
+    color: var(--theme-font-color-inverse);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 </style>
 <BaseLayout title="Justin Bird | Home">
   <secion class="row">
@@ -174,9 +186,17 @@ import headShot from "../assets/images/justin-bird-headshot.jpg";
       >see all post...</a
     >
     <div class="row">
-      <article class="row__item blog">
-        <h3>Placeholder Blog Post: Post 1</h3>
-      </article>
+      {
+        blogPosts.map((post) => (
+          <article class="row__item blog">
+            <h3>{post.frontmatter.title}</h3>
+            <p>{post.frontmatter.description}</p>
+            <a class="read_post" href={post.url}>
+              Read Post!
+            </a>
+          </article>
+        ))
+      }
       <article class="row__item blog">
         <h3>Placeholder Blog Post: Post 2</h3>
       </article>
